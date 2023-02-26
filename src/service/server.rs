@@ -67,8 +67,6 @@ pub async fn run(config: Config) {
                 Ok(len) => len,
             };
             let buf = buf[..read_len].to_vec();
-            println!("{:?}", read_len);
-            println!("{:?}", buf);
 
             let trojan = parser_trojan(buf.clone());
             let trojan = match trojan {

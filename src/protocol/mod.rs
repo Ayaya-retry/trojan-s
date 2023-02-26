@@ -4,8 +4,6 @@ use std::net::{IpAddr, Ipv4Addr, Ipv6Addr, SocketAddr};
 pub mod trojan;
 
 pub fn parser_trojan(buf: Vec<u8>) -> Result<trojan::Trojan, ()> {
-    println!("parser_trojan");
-
     let pos = utility::search_u8_vec(&buf, &"\r\n".as_bytes().to_vec());
     if let None = pos {
         return Err(());
